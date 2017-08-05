@@ -1,0 +1,26 @@
+{
+  "name": "grant-app-client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "amazon-cognito-identity-js": "^1.18.0",
+    "aws-sdk": "2.80.0",
+    "crypto-js": "3.1.9-1",
+    "react": "^15.5.4",
+    "react-bootstrap": "^0.31.0",
+    "react-dom": "^15.5.4",
+    "react-router-dom": "^4.1.1"
+  },
+  "devDependencies": {
+    "react-scripts": "1.0.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "predeploy": "npm run build",
+    "deploy": "aws s3 sync build/ s3://grant-calculator",
+    "postdeploy": "aws cloudfront create-invalidation --distribution-id E22QWE66UMFD9T --paths '/*' && aws cloudfront create-invalidation --distribution-id E3MLP4XU0UH45O --paths '/*'",
+    "eject": "react-scripts eject"
+  }
+}

@@ -1,0 +1,8 @@
+.NewGrant form {
+  padding-bottom: 15px;
+}
+
+.NewGrant form textarea {
+  height: 300px;
+  font-size: 24px;
+}
